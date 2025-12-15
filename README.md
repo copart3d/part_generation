@@ -63,7 +63,7 @@ This repository is currently under development. Thank you for your patience.
       ```
 
 ## 🔀 Pretrained Models
-The pretrained models can be uploaded [here](https://drive.google.com/drive/folders/1iSgDC-vnN4JlzLyEHzJ1vsd8jUlTQ9rN?usp=sharing). And please download *TRELLIS-image-large* weights from [here](https://huggingface.co/microsoft/TRELLIS-image-large/tree/main/ckpts) and put them into `pretrained_models/trellis/ckpts`.
+The pretrained models are available at [here](https://drive.google.com/drive/folders/1iSgDC-vnN4JlzLyEHzJ1vsd8jUlTQ9rN?usp=sharing). And please download *TRELLIS-image-large* weights from [here](https://huggingface.co/microsoft/TRELLIS-image-large/tree/main/ckpts) and put them into `pretrained_models/trellis/ckpts`.
 
 ## 📦 Data
 1. Download the [PartVerse](https://huggingface.co/datasets/dscdyc/partverse)/[PartVerse-XL](https://huggingface.co/datasets/dscdyc/partversexl) (12K/40K objects with 91K/320K parts) from HuggingFace. We have uploaded the initial dataset and are actively working on adding more.
