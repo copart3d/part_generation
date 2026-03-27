@@ -1,41 +1,27 @@
 <div align="center">
 
-# FullPart: Generating each 3D Part at Full Resolution
-## [arXiv Preprint](https://arxiv.org/abs/2510.26140) | [Project](https://fullpart3d.github.io) | [Dataset](https://huggingface.co/datasets/dscdyc/partversexl) | [Demo (Coming)]()
+# 3D Part Generation
 
 </div>
-
-![image_1](assets/teaser.png)
-
-We present a new part-based 3D generation framework *FullPart* that combines both implicit and explicit paradigms. 
-
-<!-- ![image_2](assets/framework5.png) -->
-
-And we introduce the largest and most comprehensively annotated 3D part dataset [*PartVerse-XL*](https://huggingface.co/datasets/dscdyc/partversexl), an upgraded version of [*PartVerse*](https://copart3d.github.io/), from 12K/91K to 40K/320K objects/parts. 
-
-
-![image_3](assets/data_teaser.png)
-This repository is currently under development. Thank you for your patience.
-
 
 ## 🔨 Installation
 1. Clone the repo:
       ```bash
-      git clone https://github.com/hkdsc/fullpart.git
+      git clone https://github.com/copart3d/part_generation.git
       cd src/submodule/TRELLIS
       ```
 
 2. Follow the [*TRELLIS*](https://github.com/microsoft/TRELLIS) repo to install the basic dependencies:
     
       **Before running the following command there are somethings to note:**
-      - By adding `--new-env`, a new conda environment named `fullpart` will be created. If you want to use an existing conda environment, please remove this flag.
-      - By default the `fullpart` environment will use pytorch 2.4.0 with CUDA 11.8. If you want to use a different version of CUDA (e.g., if you have CUDA Toolkit 12.2 installed and do not want to install another 11.8 version for submodule compilation), you can remove the `--new-env` flag and manually install the required dependencies. Refer to [PyTorch](https://pytorch.org/get-started/previous-versions/) for the installation command.
+      - By adding `--new-env`, a new conda environment named `part3d` will be created. If you want to use an existing conda environment, please remove this flag.
+      - By default the `part3d` environment will use pytorch 2.4.0 with CUDA 11.8. If you want to use a different version of CUDA (e.g., if you have CUDA Toolkit 12.2 installed and do not want to install another 11.8 version for submodule compilation), you can remove the `--new-env` flag and manually install the required dependencies. Refer to [PyTorch](https://pytorch.org/get-started/previous-versions/) for the installation command.
       - If you have multiple CUDA Toolkit versions installed, `PATH` should be set to the correct version before running the command. For example, if you have CUDA Toolkit 11.8 and 12.2 installed, you should run `export PATH=/usr/local/cuda-11.8/bin:$PATH` before running the command.
       - By default, the code uses the `flash-attn` backend for attention. For GPUs do not support `flash-attn` (e.g., NVIDIA V100), you can remove the `--flash-attn` flag to install `xformers` only and set the `ATTN_BACKEND` environment variable to `xformers` before running the code. See the [Minimal Example](#minimal-example) for more details.
       - The installation may take a while due to the large number of dependencies. Please be patient. If you encounter any issues, you can try to install the dependencies one by one, specifying one flag at a time.
       - If you encounter any issues during the installation, feel free to open an issue or contact us.
 
-      Create a new conda environment named `fullpart` and install the dependencies:
+      Create a new conda environment named `part3d` and install the dependencies:
       ```sh
       . ./setup.sh --new-env --basic --xformers --flash-attn --diffoctreerast --spconv --mipgaussian --kaolin --nvdiffrast
       ```
@@ -182,15 +168,4 @@ python inference.py \
 	--raw-path assets/demo_examples/toy_gun \
 	--raw-sample_id {MY_SAMPLE_ID} \
 	--output-dir {OUT_PATH}
-```
-
-## 📖 Citation
-```bibtex
-@misc{ding2025fullpart,
-      title={FullPart: Generating each 3D Part at Full Resolution}, 
-      author={Lihe Ding and Shaocong Dong and Yaokun Li and Chenjian Gao and Xiao Chen and Rui Han and Yihao Kuang and Hong Zhang and Bo Huang and Zhanpeng Huang and Zibin Wang and Dan Xu and Tianfan Xue},
-      year={2025},
-      eprint={2510.26140},
-      archivePrefix={arXiv},
-}
 ```
